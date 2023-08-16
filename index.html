@@ -1,0 +1,64 @@
+<!DOCTYPE html-5>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="Screen">
+      <div class="icons">
+        <input type="text" name="cites" id="input1" placeholder="Enter City Name" spellcheck="false">
+        <button class="search" id="searchbutton"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+      <div class="weather">
+        <h1 class="temp">22°C</h1>
+        <h2 class="city">New York</h2>
+        <div class="details">
+          <div class="col">
+            <img src="humidity.png" alt="Humidity">
+            <div>
+              <p class="humidity">50%</p>
+              <p>Humidity</p>
+            </div>
+          </div>
+          <div class="col">
+            <img src="Wind.png" alt="Wind">
+            <div>
+              <p class="wind">15 Km/h</p>
+              <p>Wind Speed </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const apikey = "4b131b7aab753144a8a38dbe188fb9b3";
+    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
+    const searchBox = document.querySelector("#input1");
+    const searchBtn = document.querySelector(".search");
+    async function checkWeather(city) {
+      const response = await fetch(apiUrl + city + `&appid=${apikey}`);
+      var data = await response.json();
+      console.log(data);
+      document.querySelector(".city").innerHTML = data.name;
+      document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
+      document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+      document.querySelector(".wind").innerHTML = data.wind.speed + " Km/h";
+    }
+    searchBtn.addEventListener("click", () => {
+      checkWeather(searchBox.value);
+    });
+
+  </script>
+</body>
+
+</html>
