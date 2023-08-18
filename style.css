@@ -21,15 +21,15 @@ div.container {
 
 div.Screen {
   background: linear-gradient(135deg, #00feba, #5b548a);
-  width: 400px;
-  height: 70%;
+  width: 430px;
+  height: 75%;
   color: #fff;
   padding: 30px 25px;
   border-radius: 15px;
 }
 
 #input1 {
-  width: 200px;
+  width: 300px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 25px;
@@ -49,7 +49,7 @@ div.Screen {
   width: 40px;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 25px;
+  border-radius: 50%;
   font-size: 16px;
   margin-left: 15px;
 }
@@ -62,7 +62,7 @@ div.Screen {
   justify-content: center;
   align-items: center;
   line-height: 30px;
-  margin-top: 100px;
+  margin-top: 10px;
   color: #fff;
   text-align: center;
 }
@@ -73,7 +73,7 @@ div.Screen {
 }
 
 .weather h2 {
-  margin-top: 30px;
+  margin-top: 45px;
   font-size: 45px;
   font-weight: 200;
 }
@@ -83,7 +83,7 @@ div.Screen {
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  margin-top: 100px;
+  margin-top: 70px;
 }
 
 .col {
@@ -101,4 +101,8 @@ div.Screen {
 .wind {
   font-size: 28px;
   margin-top: -6px;
+}
+
+img.state {
+  width: 170px;
 }
